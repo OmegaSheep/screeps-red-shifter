@@ -1,10 +1,13 @@
+// harvest nearest source
 module.exports = function(creep) {
-    var targets = creep.room.find(Game.HOSTILE_CREEPS);
-    if (targets.length) {
-    	creep.moveTo(targets[0]);
-    	creep.attack(targets[0]);
+    if (creep.energy < creep.energyCapacity) {
+        var source_get_nearest = require('source_get_nearest');
+        var source = source_get_nearest(creep);
+        creep.moveTo(source);
+        creep.harvest(source);
     }
     else {
         creep.moveTo(Game.spawns.Spawn1);
+	    creep.transferEnergy(Game.spawns.Spawn1);
     }
 };
