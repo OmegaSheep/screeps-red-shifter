@@ -12,7 +12,7 @@ var r_count = 0;
 
 var h_want = 3;
 var b_want = 0;
-var g_want = 1;
+var g_want = 3;
 var c_want = 1;
 var r_want = 2;
 
