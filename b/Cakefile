@@ -1,0 +1,4 @@
+{exec} = require("child_process")
+task 'build', "./coffee to ./js", ->
+	exec "coffee --compile --output js/ coffee/", {}, (out) ->
+		console.info out or "Ok"
