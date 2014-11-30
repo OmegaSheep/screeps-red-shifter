@@ -7,7 +7,7 @@ module.exports = function(creep) {
             var dist = Math.sqrt(dx*dx+dy*dy);
             if (dist <= 15) {
                 creep.moveTo(targets[0]);
-    	        creep.rangedAttack(targets[0]);
+                creep.rangedAttack(targets[0]);
             }
             else {
                 creep.moveTo(Game.flags.Flag2);

@@ -3,7 +3,7 @@ module.exports = function(creep) {
     for(var i in targets) {
         if ( (targets[i].hits < targets[i].hitsMax)) {
             creep.moveTo(targets[i]);
-        	creep.heal(targets[i]);
+            creep.heal(targets[i]);
         }
         else {
             creep.moveTo(Game.flags.Flag1);

@@ -13,7 +13,9 @@ module.exports = function(creep) {
         }
     }
     else {
-        creep.moveTo(Game.spawns.Spawn1);
-	    creep.transferEnergy(Game.spawns.Spawn1);
+        var locate_carry = require('closest_friend');
+        var goal = locate_carry(creep,"carry");
+        creep.moveTo(goal);
+        creep.transferEnergy(goal);
     }
 };
