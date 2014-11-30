@@ -32,6 +32,26 @@ module.exports = function(array) {
 	    }
 	}
 
+	for (var j in Game.spawns.Spawn1.memory.buildOrder) {
+	    var thing = Game.spawns.Spawn1.memory.buildOrder[j];
+
+	    if (thing == 'h') {
+	        h_count += 1;
+	    }
+	    if (thing == 'b') {
+		    b_count += 1;
+	    }
+	    if (thing == 'g') {
+		    g_count += 1;
+	    }
+	    if (thing == 'c') {
+		    c_count += 1;
+	    }
+	    if (thing == 'r') {
+		    r_count += 1;
+	    }
+	}
+
 	var hasH = (h_count >= h_want);
 	var hasG = (g_count >= g_want);
 	var hasB = (b_count >= b_want);

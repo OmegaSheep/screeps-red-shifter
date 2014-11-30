@@ -30,7 +30,7 @@ for (var i in Game.creeps) {
     }
 }
 
-while (Game.spawns.Spawn1.memory.buildOrder.length > 0) {
+if (Game.spawns.Spawn1.spawning == null) {
     switch(Game.spawns.Spawn1.memory.buildOrder.shift()) {
         case 'h':
             Game.spawns.Spawn1.createCreep([Game.WORK, Game.CARRY, Game.MOVE], null, {role: 'harvester'});
@@ -51,5 +51,3 @@ while (Game.spawns.Spawn1.memory.buildOrder.length > 0) {
             break;
     }
 }
-
-Game.spawns.Spawn1.memory.buildOrder.push("H");
