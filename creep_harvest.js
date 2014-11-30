@@ -7,7 +7,7 @@ module.exports = function(creep) {
         var dx = Math.abs(source.pos.x - creep.pos.x);
         var dy = Math.abs(source.pos.y - creep.pos.y);
         var dist = Math.sqrt(dx*dx+dy*dy);
-        if (dist < 15) {
+        if (dist < 30) {
             creep.moveTo(source);
             creep.harvest(source);
         }
