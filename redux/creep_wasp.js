@@ -3,7 +3,7 @@ module.exports = function Wasp(creep) {
 	//Behaviour
 	var spawn = creep.pos.findNearest(Game.MY_SPAWNS)
 	var target = creep.pos.findNearest(Game.HOSTILE_CREEPS)
-	var near = creep.pos.isNearTo(target, 2)
+	var near = creep.pos.inRangeTo(target, 2)
 	if(near){
 		creep.moveTo(spawn)
 	} else {
