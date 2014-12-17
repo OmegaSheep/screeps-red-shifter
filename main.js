@@ -5,6 +5,7 @@ var creep_healer = require('creep_healer');
 var creep_ranged = require('creep_ranged');
 var creep_carry = require('creep_carry');
 var build_update = require('build_order');
+var _ = require('lodash');
 
 console.log("Current Resources:", Game.spawns.Spawn1.energy);
 
@@ -36,7 +37,7 @@ for (var i in Game.creeps) {
     }
 }
 
-if (Game.spawns.Spawn1.spawning === null) {
+if (Game.spawns.Spawn1.spawning === null && Game.spawns.Spawn1.energy > Game.spawns.spawn1.memory.buildOrder.) {
     switch(Game.spawns.Spawn1.memory.buildOrder.shift()) {
         case 'h':
             Game.spawns.Spawn1.createCreep([Game.WORK, Game.WORK, Game.CARRY, Game.MOVE], null, {role: 'harvester'});
