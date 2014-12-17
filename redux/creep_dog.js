@@ -1,7 +1,7 @@
 //harvest nearest source
 module.exports = function Dog(creep) {
 
-	var target = creep.room.findNearest(Game.HOSTILE_CREEPS);
+	var target = creep.pos.findNearest(Game.HOSTILE_CREEPS);
 	if (creep.body[3].hits > 0) {
      	creep.moveTo(target);
         creep.attack(target);
