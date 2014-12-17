@@ -1,10 +1,9 @@
 //harvest nearest source
 module.exports = function Mole(creep) {
-
-        //Behaviour
-        var source = creep.pos.findNearest(Game.SOURCES);
-        creep.moveTo(source);
-        creep.harvest(source);
+	//Behaviour
+	var source = creep.pos.findNearest(Game.SOURCES);
+	creep.moveTo(source);
+	creep.harvest(source);
 };
 
 module.exports.parts = [Game.TOUGH, Game.WORK, Game.WORK, Game.WORK, Game.MOVE];

@@ -3,16 +3,19 @@ module.exports = function Wasp(creep) {
 	//Behaviour
 	var spawn = creep.pos.findNearest(Game.MY_SPAWNS)
 	var target = creep.pos.findNearest(Game.HOSTILE_CREEPS)
-	var near = creep.pos.inRangeTo(target, 2)
-	if(near){
-		creep.moveTo(spawn)
+	if(target){
+		var near = creep.pos.inRangeTo(target, 3)
+		if(near){
+			creep.moveTo(spawn)
+		} else {
+			creep.moveTo(target)
+		}
+		creep.rangedAttack(target);
 	} else {
-		creep.moveTo(target)
+		creep.moveTo(spawn)
 	}
-	creep.rangedAttack(target);
-	
 };
 
-module.exports.parts = [Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.MOVE, Game.MOVE]
+module.exports.parts = [Game.RANGED_ATTACK, Game.MOVE, Game.RANGED_ATTACK, Game.MOVE]
 
 module.exports.role = "guard"
