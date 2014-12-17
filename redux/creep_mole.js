@@ -7,6 +7,6 @@ module.exports = function Mole(creep) {
         creep.harvest(source);
 };
 
-module.exports.parts = [Game.WORK, Game.WORK, Game.WORK, Game.MOVE];
+module.exports.parts = [Game.TOUGH, Game.WORK, Game.WORK, Game.WORK, Game.MOVE];
 
 module.exports.role = "miner";
