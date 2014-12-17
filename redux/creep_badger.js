@@ -12,7 +12,7 @@ module.exports = function(creep) {
         creep.pickup(energy);
     }
     else {
-        var spawn creep.pos.findNearest(Game.MY_SPAWNS)
+        var spawn = creep.pos.findNearest(Game.MY_SPAWNS)
         creep.moveTo(spawn);
 	    creep.transferEnergy(spawn);
     }
