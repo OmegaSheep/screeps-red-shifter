@@ -1,8 +1,8 @@
 var _ = require("lodash")
 
 var Types = {
-	mole: require("creep_mole"),
-	badger: require("creep_badger")
+	Mole: require("creep_mole"),
+	Badger: require("creep_badger")
 }
 
 
@@ -15,12 +15,12 @@ _.forEach(Types, function(type){
 })
 
 _.forEach(Game.creeps, function(creep){ if(creep.my){
-	var type = Types[creep.memory.role]
+	var type = Types[creep.memory.type]
 	type.alive.push(creep)
 	type(creep)
 }})
 
-var queue = ["mole", "badger"];
+var queue = ["Mole", "Badger"];
 
 (function(){
 	for (var type in queue){ var name = queue[type]; type = Types[name] 
@@ -28,7 +28,7 @@ var queue = ["mole", "badger"];
 			(function(){
 				for(var spawn in Game.spawns){ spawn = Game.spawns[spawn]
 					if (spawn.my && !spawn.spawning && energyCost(type.parts) < spawn.energy){
-						var creep = spawn.createCreep(type.parts, void 0, {type: name})
+						var creep = spawn.createCreep(type.parts, void 0, {role: type.role, type: type.name})
 						if (!(creep < 0)){ return; }
 					}
 				}

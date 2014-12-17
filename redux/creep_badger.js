@@ -1,5 +1,5 @@
 // harvest nearest source
-module.exports = function(creep) {
+module.exports = function Badger(creep) {
     if (creep.energy < creep.energyCapacity) {
 
         var goal = creep.pos.findNearest(Game.MY_CREEPS, {filter: function(creep) {return creep.memory.role == 'miner'} });

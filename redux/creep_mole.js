@@ -2,7 +2,7 @@
 module.exports = function Mole(creep) {
 
         //Behaviour
-        var source = creep.room.findNearest(Game.SOURCES);
+        var source = creep.pos.findNearest(Game.SOURCES);
         creep.moveTo(source);
         creep.harvest(source);
 };
