@@ -9,12 +9,14 @@ module.exports = function Wisp(creep) {
 	}
 
 	if(far && creep.body[1].hits > 0) {
+		creep.heal(target);
 		creep.moveTo(target);
 		creep.heal(target);
 	} else {
 		var spawn = creep.pos.findNearest(Game.MY_SPAWNS)
 		creep.heal(target);
 		creep.moveTo(spawn);
+		creep.heal(target);
 	}
 };
 
