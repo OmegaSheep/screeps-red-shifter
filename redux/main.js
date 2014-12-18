@@ -17,7 +17,7 @@ _.forEach(Types, function(type){
 	type.want = 0
 })
 
-_.forEach(Game.creeps, function(creep){ if(creep.my){
+_.forEach(Game.creeps, function(creep){ if(creep.my && creep.ticksToLive > 75){
 	var type = Types[creep.memory.type]
 	type.alive.push(creep)
 	type(creep)

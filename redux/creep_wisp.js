@@ -2,9 +2,9 @@ module.exports = function Wisp(creep) {
 
 	var target = creep.pos.findNearest(Game.MY_CREEPS, {filter: function(creep) { return creep.hits < creep.hitsMax } } );
 	var enemy = creep.pos.findNearest(Game.HOSTILE_CREEPS);
-	//ar far = !creep.pos.inRangeTo(enemy, 3);
+	var far = !creep.pos.inRangeTo(enemy, 3);
 
-	if(creep.hits > 50) {
+	if(far && creep.body[1].hits > 0) {
 		creep.moveTo(target);
 		creep.heal(target);
 	} else {
