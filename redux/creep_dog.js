@@ -12,6 +12,6 @@ module.exports = function Dog(creep) {
 	}
 };
 
-module.exports.parts = [Game.TOUGH, Game.TOUGH, Game.TOUGH, Game.ATTACK, Game.MOVE];
+module.exports.parts = [Game.TOUGH, Game.TOUGH, Game.ATTACK, Game.MOVE];
 
 module.exports.role = "guard";

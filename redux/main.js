@@ -4,7 +4,8 @@ var Types = {
 	Mole: require("creep_mole"),
 	Badger: require("creep_badger"),
 	Dog: require("creep_dog"),
-	Wasp: require("creep_wasp")
+	Wasp: require("creep_wasp"),
+	Wisp: require("creep_wisp")
 }
 
 
@@ -22,7 +23,7 @@ _.forEach(Game.creeps, function(creep){ if(creep.my){
 	type(creep)
 }})
 
-var queue = ["Mole", "Badger", "Dog", "Wasp"];
+var queue = ["Mole", "Badger", "Dog", "Dog", "Wasp", "Dog", "Wasp", "Wisp", "Wisp", "Dog", "Dog", "Wasp", "Dog", "Wasp", "Wisp", "Wisp","Dog", "Dog", "Wasp", "Dog", "Wasp", "Wisp", "Wisp"];
 
 (function(){
 	for (var type in queue){ var name = queue[type]; type = Types[name] 
